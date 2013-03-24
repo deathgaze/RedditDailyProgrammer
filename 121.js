@@ -16,8 +16,8 @@ function ChangeCoin(coin) {
 
 // ChangeCoinRecursive : number[?] -> number
 // Keep shoving coins into the ChangeCoin function
-// until I have no non-zero coins left. Returns
-// number of zero coins counted
+// until I have no non-zero coins left. 
+// Returns number of zero coins counted.
 function ChangeCoinRecursive(coins) {
 	// The number of zero value coins so far...
 	var zeroCount = 0;
@@ -33,5 +33,5 @@ function ChangeCoinRecursive(coins) {
 	};
 	return zeroCount;
 }
+console.log(ChangeCoinRecursive([7]));
 console.log(ChangeCoinRecursive([1000]));
-
