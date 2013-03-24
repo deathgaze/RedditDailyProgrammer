@@ -33,23 +33,25 @@ ChangeCoinTest(19, [9, 6, 4]);
 ChangeCoinTest(2, [1, 0, 0]);
 ChangeCoinTest(0, []);
 */
-// The number of zero value coins so far...
-var ZeroCount = 0;
-// ChangeCoinRecursive : number[?] -> number[?]
+
+// ChangeCoinRecursive : number[?] -> number
 // Keep shoving coins into the ChangeCoin function
-// until I have no non-zero coins left. 
+// until I have no non-zero coins left. Returns
+// number of zero coins counted
 function ChangeCoinRecursive(coins) {
+	// The number of zero value coins so far...
+	var zeroCount = 0;
 	for (var i = coins.length - 1; i >= 0; i--) {
 		// Count & Purge
 		if (coins[i] == 0) {
-			ZeroCount++;
+			zeroCount++;
 			coins.splice(i, 1);
 		} else {
 			// Shove the rest of the Coins in
-			ChangeCoinRecursive(ChangeCoin(coins[i]));
+			zeroCount += ChangeCoinRecursive(ChangeCoin(coins[i]));
 		}
 	};
+	return zeroCount;
 }
-ChangeCoinRecursive([1000]);
-console.log(ZeroCount);
+console.log(ChangeCoinRecursive([1000]));
 
