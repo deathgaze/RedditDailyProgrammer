@@ -1,5 +1,3 @@
-
-
 // ChangeCoin : number -> number[3]
 // Creates 3 coins of value n/2, n/3 and n/4
 function ChangeCoin(coin) {
@@ -15,24 +13,6 @@ function ChangeCoin(coin) {
 	resultCoins.push(Math.floor(coin/4));
 	return resultCoins;
 }
-/*// tests...
-function ChangeCoinTest(test, control) {
-	var result = ChangeCoin(test);
-	result.sort();
-	control.sort(); 
-	if (result.toString() == control.toString()) {
-		console.log("SUCCEEDED test " + test + 
-			" result " + result + " == " + control);
-	} else {
-		console.log("FAILED test " + test + 
-			" result " + result + " != " + control);
-	}
-
-}
-ChangeCoinTest(19, [9, 6, 4]);
-ChangeCoinTest(2, [1, 0, 0]);
-ChangeCoinTest(0, []);
-*/
 
 // ChangeCoinRecursive : number[?] -> number
 // Keep shoving coins into the ChangeCoin function
